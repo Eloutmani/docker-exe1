@@ -29,7 +29,7 @@ touch test.py
 echo "WARNING: ret pointer is null" > test.py
 docker commit myalpine myalpine:v12
 docker images
-docker save -o myimage.tar myalpine:v12
+docker export myalpine > myfile.tar
 docker history myalpine:v12
 cat myimage.tar | docker import - myalpine:v12
 docker login -u eloutmani23 -p <password>
